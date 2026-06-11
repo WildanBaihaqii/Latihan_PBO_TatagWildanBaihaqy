@@ -3,7 +3,7 @@
 $host     = "localhost";     // Server database (biasanya localhost)
 $username = "root";          // Username default MySQL XAMPP
 $password = "";              // Password default MySQL XAMPP (kosong)
-$database = "tiket_bioskop"; // ⚠️ GANTI dengan nama database tempat Anda mengimport tiket_bioskop.sql
+$database = "db_latihan_pbo_trpl1a_tatagwildanbaihaqy.sql"; // ⚠️ GANTI dengan nama database tempat Anda mengimport tiket_bioskop.sql
 
 // 2. Membuat Koneksi ke Database
 $koneksi = new mysqli($host, $username, $password, $database);
