@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 11, 2026 at 08:01 PM
+-- Generation Time: Jun 11, 2026 at 08:29 PM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tiket_bioskop`
+-- Table structure for table `table_tiket`
 --
 
-CREATE TABLE `tiket_bioskop` (
+CREATE TABLE `table_tiket` (
   `id_tiket` varchar(10) NOT NULL,
   `nama_film` varchar(100) NOT NULL,
   `jadwal_tayang` datetime NOT NULL,
@@ -43,10 +43,10 @@ CREATE TABLE `tiket_bioskop` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `tiket_bioskop`
+-- Dumping data for table `table_tiket`
 --
 
-INSERT INTO `tiket_bioskop` (`id_tiket`, `nama_film`, `jadwal_tayang`, `jumlah_kursi`, `harga_dasar_tiket`, `jenis_studio`, `lokasi_baris`, `tipe_audio`, `kacamata_3d_id`, `efek_gerak_fitur`, `bantal_selimut_pack`, `layanan_butler`) VALUES
+INSERT INTO `table_tiket` (`id_tiket`, `nama_film`, `jadwal_tayang`, `jumlah_kursi`, `harga_dasar_tiket`, `jenis_studio`, `lokasi_baris`, `tipe_audio`, `kacamata_3d_id`, `efek_gerak_fitur`, `bantal_selimut_pack`, `layanan_butler`) VALUES
 ('TKT001', 'Avengers: Secret Wars', '2026-07-15 13:00:00', 1, 50000.00, 'Regular', 'G', 'Dolby Atmos 7.1', NULL, NULL, NULL, NULL),
 ('TKT002', 'Avengers: Secret Wars', '2026-07-15 13:00:00', 2, 50000.00, 'Regular', 'G', 'Dolby Atmos 7.1', NULL, NULL, NULL, NULL),
 ('TKT003', 'Ngeri-Ngeri Sedap 2', '2026-07-15 14:30:00', 1, 40000.00, 'Regular', 'E', 'Dolby Digital', NULL, NULL, NULL, NULL),
@@ -73,9 +73,9 @@ INSERT INTO `tiket_bioskop` (`id_tiket`, `nama_film`, `jadwal_tayang`, `jumlah_k
 --
 
 --
--- Indexes for table `tiket_bioskop`
+-- Indexes for table `table_tiket`
 --
-ALTER TABLE `tiket_bioskop`
+ALTER TABLE `table_tiket`
   ADD PRIMARY KEY (`id_tiket`);
 COMMIT;
 
