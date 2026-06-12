@@ -1,8 +1,7 @@
 <?php
-require_once 'Tiket.php';
+require_once __DIR__ . '/../Tiket.php';
 
 class TiketVelvet extends Tiket {
-    // Properti spesifik kelas Velvet
     protected $bantalSelimutPack;
     protected $layananButler;
 
@@ -12,14 +11,14 @@ class TiketVelvet extends Tiket {
         $this->layananButler = $layananButler;
     }
 
-    // Getter & Setter Spesifik
     public function getBantalSelimutPack() { return $this->bantalSelimutPack; }
-    public function setBantalSelimutPack($bantalSelimutPack) { $this->bantalSelimutPack = $bantalSelimutPack; }
-
     public function getLayananButler() { return $this->layananButler; }
-    public function setLayananButler($layananButler) { $this->layananButler = $layananButler; }
 
-    public function getJenisStudio() {
-        return 'Velvet';
+    public function getJenisStudio() { return 'Velvet'; }
+
+    // Tahap 5: Overriding Hitung Harga (Surcharge 50% / dikali 1.50)
+    public function hitungTotalHarga() {
+        return ($this->jumlah_kursi * $this->harga_dasar_tiket) * 1.50;
     }
 }
+?>
