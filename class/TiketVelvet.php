@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../Tiket.php';
+require_once __DIR__ . '/../src/Tiket.php';
 
 class TiketVelvet extends Tiket {
     protected $bantalSelimutPack;
@@ -16,7 +16,7 @@ class TiketVelvet extends Tiket {
 
     public function getJenisStudio() { return 'Velvet'; }
 
-    // Tahap 5: Overriding Hitung Harga (Surcharge 50% / dikali 1.50)
+    // Tahap 5: Overriding Hitung Harga (Surcharge 50% / * 1.50)
     public function hitungTotalHarga() {
         return ($this->jumlah_kursi * $this->harga_dasar_tiket) * 1.50;
     }

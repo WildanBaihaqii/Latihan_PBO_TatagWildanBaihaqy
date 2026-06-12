@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../Tiket.php';
+require_once __DIR__ . '/../src/Tiket.php';
 
 class TiketRegular extends Tiket {
     protected $tipeAudio;
@@ -16,7 +16,7 @@ class TiketRegular extends Tiket {
 
     public function getJenisStudio() { return 'Regular'; }
 
-    // Tahap 5: Overriding Hitung Harga
+    // Tahap 5: Overriding Hitung Harga (Murni)
     public function hitungTotalHarga() {
         return $this->jumlah_kursi * $this->harga_dasar_tiket;
     }
