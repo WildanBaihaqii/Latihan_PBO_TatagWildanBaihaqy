@@ -15,14 +15,14 @@ abstract class Tiket {
         $this->harga_dasar_tiket = $harga_dasar_tiket;
     }
 
-    // Getter & Setter Induk
+    // Getter
     public function getIdTiket() { return $this->id_tiket; }
     public function getNamaFilm() { return $this->nama_film; }
     public function getJadwalTayang() { return $this->jadwal_tayang; }
     public function getJumlahKursi() { return $this->jumlah_kursi; }
     public function getHargaDasarTiket() { return $this->harga_dasar_tiket; }
     
-    // Method Abstrak yang akan di-override di kelas anak
+    // Method Abstrak untuk Polimorfisme
     abstract public function getJenisStudio();
     abstract public function hitungTotalHarga();
 }
