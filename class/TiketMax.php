@@ -1,8 +1,7 @@
 <?php
-require_once 'Tiket.php';
+require_once __DIR__ . '/../Tiket.php';
 
 class TiketMax extends Tiket {
-    // Properti spesifik kelas IMAX
     protected $kacamata3dId;
     protected $efekGerakFitur;
 
@@ -12,14 +11,14 @@ class TiketMax extends Tiket {
         $this->efekGerakFitur = $efekGerakFitur;
     }
 
-    // Getter & Setter Spesifik
     public function getKacamata3dId() { return $this->kacamata3dId; }
-    public function setKacamata3dId($kacamata3dId) { $this->kacamata3dId = $kacamata3dId; }
-
     public function getEfekGerakFitur() { return $this->efekGerakFitur; }
-    public function setEfekGerakFitur($efekGerakFitur) { $this->efekGerakFitur = $efekGerakFitur; }
 
-    public function getJenisStudio() {
-        return 'IMAX';
+    public function getJenisStudio() { return 'IMAX'; }
+
+    // Tahap 5: Overriding Hitung Harga (+35000)
+    public function hitungTotalHarga() {
+        return ($this->jumlah_kursi * $this->harga_dasar_tiket) + 35000;
     }
 }
+?>
