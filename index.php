@@ -1,5 +1,4 @@
 <?php 
-// Memanggil proses data logik di berkas terpisah
 require_once __DIR__ . '/proses_data.php'; 
 ?>
 <!DOCTYPE html>
@@ -7,7 +6,7 @@ require_once __DIR__ . '/proses_data.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterprise Cinema Dashboard - Interactive Edition</title>
+    <title>Enterprise Cinema Dashboard - Soft Clean Edition</title>
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
@@ -15,7 +14,7 @@ require_once __DIR__ . '/proses_data.php';
     <aside class="sidebar">
         <div>
             <div class="sidebar-logo">
-                <span style="background: linear-gradient(135deg, #af52de, #007aff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Bioskop Ji</span>
+                <span style="background: linear-gradient(135deg, #b39ddb, #4fc3f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Bioskop</span>
             </div>
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
@@ -33,7 +32,7 @@ require_once __DIR__ . '/proses_data.php';
             <div class="avatar-circle">TW</div>
             <div>
                 <p style="font-size:13px; color:#ffffff; font-weight:600;">Tatag Wildan</p>
-                <p style="font-size:11px; color:#b0b3b8;">Administrator</p>
+                <p style="font-size:11px; color:#92929d;">Administrator</p>
             </div>
         </div>
     </aside>
@@ -42,35 +41,35 @@ require_once __DIR__ . '/proses_data.php';
 
         <div id="dashboard-view" class="app-view active-view">
             <header class="main-header">
-                <h1>Dashboard Bioskop </h1>
-                <p>Table Tiket Bioskop</p>
+                <h1>Dashboard Bioskop</h1>
+                <p>Ikhtisar performa penjualan tiket studio</p>
             </header>
 
             <section class="stats-grid">
-                <div class="stat-card" style="border-left: 4px solid #34c759;">
+                <div class="stat-card card-omset">
                     <h4>Total Omset Bruto</h4>
                     <div class="value">Rp <?php echo number_format($totalPendapatan, 0, ',', '.'); ?></div>
                 </div>
-                <div class="stat-card" style="border-left: 4px solid #af52de;">
+                <div class="stat-card card-velvet">
                     <h4>Surcharge Velvet</h4>
-                    <div class="value" style="color:#af52de;">Rp <?php echo number_format($totalSurchargeVelvet, 0, ',', '.'); ?></div>
+                    <div class="value" style="color:#b39ddb;">Rp <?php echo number_format($totalSurchargeVelvet, 0, ',', '.'); ?></div>
                 </div>
-                <div class="stat-card" style="border-left: 4px solid #007aff;">
+                <div class="stat-card card-imax">
                     <h4>Surcharge IMAX</h4>
-                    <div class="value" style="color:#007aff;">Rp <?php echo number_format($totalBiayaImax, 0, ',', '.'); ?></div>
+                    <div class="value" style="color:#4fc3f7;">Rp <?php echo number_format($totalBiayaImax, 0, ',', '.'); ?></div>
                 </div>
-                <div class="stat-card" style="border-left: 4px solid #ffffff;">
+                <div class="stat-card card-volume">
                     <h4>Volume Penjualan</h4>
                     <div class="value"><?php echo $totalTiketTerjual; ?> Pax</div>
                 </div>
             </section>
 
             <div class="chart-box">
-                <h4 style="font-size:12px; color:#b0b3b8; text-transform:uppercase; letter-spacing:0.5px;">Rasio Distribusi Objek Studio</h4>
+                <h4 style="font-size:12px; color:#92929d; text-transform:uppercase; letter-spacing:0.5px;">Rasio Distribusi Objek Studio</h4>
                 <div class="bar-container">
-                    <div class="bar-segment" style="width: <?php echo $pctRegular; ?>%; background: #34c759;"><?php echo $pctRegular; ?>% Reg</div>
-                    <div class="bar-segment" style="width: <?php echo $pctImax; ?>%; background: #007aff;"><?php echo $pctImax; ?>% IMAX</div>
-                    <div class="bar-segment" style="width: <?php echo $pctVelvet; ?>%; background: #af52de;"><?php echo $pctVelvet; ?>% Velvet</div>
+                    <div class="bar-segment" style="width: <?php echo $pctRegular; ?>%; background: #4caf50;"><?php echo $pctRegular; ?>% Reg</div>
+                    <div class="bar-segment" style="width: <?php echo $pctImax; ?>%; background: #03a9f4;"><?php echo $pctImax; ?>% IMAX</div>
+                    <div class="bar-segment" style="width: <?php echo $pctVelvet; ?>%; background: #9c27b0;"><?php echo $pctVelvet; ?>% Velvet</div>
                 </div>
             </div>
 
@@ -86,7 +85,7 @@ require_once __DIR__ . '/proses_data.php';
                     <div class="table-container">
                         <table>
                             <thead>
-                                <tr><th>Token ID</th><th>Film</th><th>Kapasitas</th><th>Harga Dasar</th><th>Fasilitas Khusus Polimorfik</th><th>Total Tagihan</th></tr>
+                                <tr><th>Token ID</th><th>Film</th><th>Kapasitas</th><th>Harga Dasar</th><th>Fasilitas Khusus</th><th>Total Tagihan</th></tr>
                             </thead>
                             <tbody>
                                 <?php foreach (array_slice($listTiket, 0, 3) as $t): ?>
@@ -117,7 +116,7 @@ require_once __DIR__ . '/proses_data.php';
         <div id="jadwal-view" class="app-view">
             <header class="main-header">
                 <h1>Jadwal Penayangan Teater</h1>
-                <p>Urutan waktu dan lini masa distribusi pertunjukan film berdasarkan jam tayang operasional teater</p>
+                <p>Lini masa distribusi pertunjukan teater berdasarkan jam operasional</p>
             </header>
 
             <div class="timeline-container">
@@ -127,12 +126,12 @@ require_once __DIR__ . '/proses_data.php';
                             <div class="time-header">
                                 <span>⏰</span> <?php echo date('H:i', strtotime($t->getJadwalTayang())); ?> WIB
                             </div>
-                            <h3 style="font-size:16px; font-weight:700; margin-bottom:6px;"><?php echo $t->getNamaFilm(); ?></h3>
-                            <p style="font-size:13px; color:#636366; margin-bottom:12px;">Tanggal: <?php echo date('d M Y', strtotime($t->getJadwalTayang())); ?></p>
+                            <h3 style="font-size:16px; font-weight:600; margin-bottom:6px; color:#1c1c1e;"><?php echo $t->getNamaFilm(); ?></h3>
+                            <p style="font-size:13px; color:#8e8e93; margin-bottom:12px;">Tanggal: <?php echo date('d M Y', strtotime($t->getJadwalTayang())); ?></p>
                         </div>
                         <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #f2f2f7; padding-top:12px; margin-top:12px;">
                             <span class="counter-badge" style="font-size:11px;">Studio <?php echo $t->getJenisStudio(); ?></span>
-                            <span style="font-size:12px; color:#3a3a3c; font-weight:500;"><?php echo $t->getJumlahKursi(); ?> Kursi Diorder</span>
+                            <span style="font-size:12px; color:#48484a; font-weight:500;"><?php echo $t->getJumlahKursi(); ?> Kursi</span>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -142,13 +141,13 @@ require_once __DIR__ . '/proses_data.php';
         <div id="transaksi-view" class="app-view">
             <header class="main-header">
                 <h1>Log Transaksi Terpadu</h1>
-                <p>Kompilasi seluruh basis data pembelian tiket polimorfik dari relasi entitas MariaDB</p>
+                <p>Kompilasi seluruh basis data pembelian tiket dari entitas database</p>
             </header>
 
             <div class="milk-panel" style="margin-top:25px;">
                 <div class="panel-header">
                     <div class="panel-title"><span>📂 Complete Data Stream Audit</span></div>
-                    <span class="counter-badge" style="background:#007aff; color:#fff;"><?php echo count($semuaTransaksi); ?> Total Item</span>
+                    <span class="counter-badge" style="background:#1c1c1e; color:#fff;"><?php echo count($semuaTransaksi); ?> Total Item</span>
                 </div>
 
                 <div class="table-container">
@@ -160,7 +159,7 @@ require_once __DIR__ . '/proses_data.php';
                                 <th>Studio</th>
                                 <th>Waktu Siar</th>
                                 <th>Volume</th>
-                                <th>Fasilitas Polimorfik</th>
+                                <th>Fasilitas</th>
                                 <th>Total Netto</th>
                                 <th>Status</th>
                             </tr>
@@ -189,7 +188,7 @@ require_once __DIR__ . '/proses_data.php';
                                             ?>
                                         </div>
                                     </td>
-                                    <td style="font-weight:700; color:#000;">Rp <?php echo number_format($t->hitungTotalHarga(), 0, ',', '.'); ?></td>
+                                    <td style="font-weight:600; color:#1c1c1e;">Rp <?php echo number_format($t->hitungTotalHarga(), 0, ',', '.'); ?></td>
                                     <td><span class="live-badge">Success</span></td>
                                 </tr>
                             <?php endforeach; ?>
