@@ -107,7 +107,7 @@ body {
 
 /* Navigasi Halaman SPA */
 .app-view {
-    display: none;
+    display: none; 
 }
 
 .app-view.active-view {
@@ -260,7 +260,7 @@ tr:hover td { background-color: #fbfbfe; }
     gap: 8px;
 }
 
-/* Diagram Kontribusi Visual Mini */
+/* Diagram Visual Mini */
 .chart-box {
     background: rgba(255,255,255,0.02);
     border: 1px solid rgba(255,255,255,0.08);
